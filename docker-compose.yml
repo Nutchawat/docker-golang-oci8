@@ -1,11 +1,9 @@
 version: "2"
 services:
     golang:
-        build: ./go
+        build: ./go-image
         container_name: go
-        working_dir: /go/src/server
         volumes:
             - ./pkgconfig:/usr/lib/pkgconfig
-            - ./go/src:/go/src
-            - ./go/bin:/go/bin
+            - ./go:/go
         command: bash -c "go get -u github.com/labstack/echo && go get -u github.com/mattn/go-oci8 && GOOS=windows GOARCH=386 go install server"
