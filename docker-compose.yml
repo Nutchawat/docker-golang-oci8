@@ -4,6 +4,17 @@ services:
         build: ./go-image
         container_name: go
         volumes:
-            - ./pkgconfig:/usr/lib/pkgconfig
-            - ./go:/go
-        command: bash -c "go get -u github.com/labstack/echo && go get -u github.com/mattn/go-oci8 && GOOS=windows GOARCH=386 go install server"
+          - ./contrib/oci8_linux_amd64:/usr/lib/pkgconfig/oci8
+          - ./go:/go
+        ports:
+          - 1323:1323
+        environment:
+          - GOOS=linux
+          - GOARCH=amd64
+          # - CGO_ENABLED=1
+          # - CC=x86_64-w64-mingw32-gcc
+          # - CXX=x86_64-w64-mingw32-g++
+        # command: bash -c "go get -u github.com/labstack/echo && go get gopkg.in/rana/ora.v3"
+        # command: go get -u github.com/labstack/echo
+        # command: go get gopkg.in/rana/ora.v3
+        command: go install server

@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y \
     vim \
     pkg-config \
     libaio1 \
-    wget
+    wget \
+    mingw-w64
 
 RUN mkdir -p /usr/lib/oracle/12.1/client64/lib \
     && mkdir -p /usr/include/oracle/12.1/client64/
@@ -33,5 +34,3 @@ RUN unzip /tmp/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /tmp \
 	&& unzip /tmp/instantclient-sdk-linux.x64-12.1.0.2.0.zip -d /tmp \
     && cp /tmp/instantclient_12_1/sdk/include/* /usr/include/oracle/12.1/client64/ \
     && rm -rf /tmp/*
-
-#RUN go get github.com/mattn/go-oci8

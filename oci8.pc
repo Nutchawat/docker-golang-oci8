@@ -1,0 +1,12 @@
+ora=c:\Oracle64Instant
+gcc=c:\tdm-gcc-64\x86_64-w64-mingw32
+oralib=${ora}\sdk\lib\msvc
+orainclude=${ora}\sdk\include
+gcclib=${gcc}\lib
+gccinclude=${gcc}\include
+Name: OCI
+Description: Oracle database engine
+Version: 12.1
+Libs: -L${ora} -L${gcclib} -loci
+Libs.private:
+Cflags: -I${orainclude} -I${gccinclude}
