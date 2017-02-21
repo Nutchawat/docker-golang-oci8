@@ -1,10 +1,10 @@
-prefix=/Users/dfils/src/oracle/instantclient_12_1
+prefix=/usr
 
 version=12.1
 build=client64
 
-libdir=${prefix}
-includedir=${prefix}/sdk/include
+libdir=${prefix}/lib/oracle/${version}/${build}/lib
+includedir=${prefix}/include/oracle/${version}/${build}
 
 Name: oci8
 Description: Oracle database engine

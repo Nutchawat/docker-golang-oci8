@@ -1,6 +1,1 @@
 .DS_Store
-go/.DS_Store
-go/bin/
-go/pkg/
-go/src/github.com/
-go/src/golang.org/

@@ -1,0 +1,9 @@
+.DS_Store
+.env
+bin/
+pkg/
+src/github.com/
+src/golang.org/
+src/gopkg.in/
+cert.pem
+key.pem
